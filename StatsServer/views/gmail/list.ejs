@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gmail Threads</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <table>
+  	<% for (var i = 0; i < threads.length; i++) { %>
+  	<tr>
+  		<td><%= threads[i].id %></td>
+  		<td><%= threads[i].snippet %></td>
+  	</tr>
+    <% } %>
+    </table>
+  </body>
+</html>
