@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.gmail-threads-data td {
+  text-align: left;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
