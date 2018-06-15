@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Gmail Threads</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-  <table>
-  	<% for (var i = 0; i < threads.length; i++) { %>
-  	<tr>
-  		<td><%= threads[i].id %></td>
-  		<td><%= threads[i].snippet %></td>
-  	</tr>
-    <% } %>
-    </table>
-  </body>
+
+<head>
+  <title>Gmail Threads</title>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body style="background: #e4f8fd">
+  <div class="container">
+    <div style="width:100%">
+      <form method="GET" action="/gmail/list">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="input_q" name="q" style="width:150px">
+          <label class="mdl-textfield__label" for="input_q">Query...</label>
+        </div>
+        <input type="submit" value="Search" style="">
+      </form>
+    </div>
+    <div>
+      <table class="mdl-data-table gmail-threads-data">
+        <% for (var i = 0; i < threads.length; i++) { %>
+          <tr>
+            <td>
+              <%= threads[i].id %>
+            </td>
+            <td>
+              <%= threads[i].snippet %>
+            </td>
+            <td>
+              <%= threads[i].sentiment %>
+            </td>
+          </tr>
+          <% } %>
+      </table>
+    </div>
+  </div>
+</body>
+
 </html>
